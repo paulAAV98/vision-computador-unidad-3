@@ -1,0 +1,170 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="16dp">
+
+        <Button
+            android:id="@+id/btnPick"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="ELEGIR IMAGEN" />
+
+        <Button
+            android:id="@+id/btnProcess"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="PROCESAR (BINARIZAR + CONTORNO)"
+            android:enabled="false"
+            android:layout_marginTop="8dp" />
+
+        <TextView
+            android:id="@+id/tvStatus"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Estado"
+            android:textSize="14sp"
+            android:paddingTop="10dp"
+            android:paddingBottom="10dp" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Original"
+            android:textStyle="bold"
+            android:paddingTop="4dp"/>
+
+        <ImageView
+            android:id="@+id/imgOriginal"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:adjustViewBounds="true"
+            android:scaleType="fitCenter"
+            android:contentDescription="original" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Binarizada"
+            android:textStyle="bold"
+            android:paddingTop="10dp"/>
+
+        <ImageView
+            android:id="@+id/imgBinary"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:adjustViewBounds="true"
+            android:scaleType="fitCenter"
+            android:contentDescription="binary" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Contorno"
+            android:textStyle="bold"
+            android:paddingTop="10dp"/>
+
+        <ImageView
+            android:id="@+id/imgContour"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:adjustViewBounds="true"
+            android:scaleType="fitCenter"
+            android:contentDescription="contour" />
+
+        <!-- ✅ Literal C -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="FFT (Descriptor)"
+            android:textStyle="bold"
+            android:paddingTop="12dp"/>
+
+        <TextView
+            android:id="@+id/tvFFT"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="K=32 | Primeros 5 coef: -"
+            android:textSize="14sp"
+            android:paddingTop="6dp"
+            android:paddingBottom="10dp" />
+
+        <!-- ✅ Parte siguiente: dataset + clasificación -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Dataset (Etiquetar y Evaluar)"
+            android:textStyle="bold"
+            android:paddingTop="10dp"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:paddingTop="6dp">
+
+            <Button
+                android:id="@+id/btnLabelTri"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="TRIÁNGULO" />
+
+            <Button
+                android:id="@+id/btnLabelCua"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="CUADRADO"
+                android:layout_marginStart="6dp"/>
+
+            <Button
+                android:id="@+id/btnLabelCir"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="CÍRCULO"
+                android:layout_marginStart="6dp"/>
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/tvSelectedLabel"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Etiqueta seleccionada: -"
+            android:textSize="14sp"
+            android:paddingTop="6dp"
+            android:paddingBottom="6dp" />
+
+        <Button
+            android:id="@+id/btnAddSample"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="AGREGAR AL DATASET (usa FFT actual)"
+            android:enabled="false"
+            android:layout_marginTop="4dp"/>
+
+        <Button
+            android:id="@+id/btnEvaluate"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="EVALUAR PRECISIÓN (1-NN Euclídea)"
+            android:enabled="false"
+            android:layout_marginTop="8dp"/>
+
+        <TextView
+            android:id="@+id/tvEval"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Aún no evaluado."
+            android:textSize="14sp"
+            android:paddingTop="8dp"
+            android:paddingBottom="10dp" />
+
+    </LinearLayout>
+</ScrollView>
