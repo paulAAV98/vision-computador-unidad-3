@@ -57,7 +57,7 @@ del sistema.
 
 ## Autor
 - **Nombre:** Paul Arichabala
-- **Carrera:** Ingeniería en Sistemas / Informática
+- **Carrera:** Ingeniería en Ciencas de la Computación
 - **Asignatura:** Visión por Computador
 
 
